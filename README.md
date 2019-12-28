@@ -13,6 +13,10 @@ Improvement | Progress
 Teach words by showing sentences where that word is used | [ ]
 Teach words by grammatical class | [ ]
 Present verbs in infinitive form | [ ]
+Present nouns in singular form | [ ]
+Include a feature for image recognition | [ ]
 Develop a user-friendly application | [ ]
 
 I hope that others language love programmers join me in this project. I believe that its basic model can easily be expanded to cover other laguages and make the learn of a new language even funnier.
+
+This game relies heavily on the Deutsch version of [pattern module](https://www.clips.uantwerpen.be/pages/pattern-de)
