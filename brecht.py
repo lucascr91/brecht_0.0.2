@@ -6,7 +6,7 @@
 
 import pickle
 import spacy
-from selenium import webdri
+from selenium import webdriver
 nlp = spacy.load('de')
 
 
