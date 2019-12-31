@@ -18,18 +18,19 @@ If you use a Linux distribution and already have Python installed in your PC, ju
 ```
 bash brecht_app.sh
 ```
+To see the list of python modules you need to run Brecht, see the file REQUIREMENTS
 
 
 
 #### How to use Brecht 0.0.2
 
-It's useful to know how Brecht is organized in order to be able to use it. Brecht is divided in four windows. The first window asks the user to chose which language she/he wants to practice. The second demands that the user provide the text she/he wants to read later. In the text upload window, the user can chose one of the folowing options: 1) open a file already saved within the Brecht's directory, 2) Upload a file, and 3) Paste the text into Brecht. Brecht requires that the file used in options 1 and 2 has a .txt extension.
+It's useful to know how Brecht is organized in order to be able to use it. Brecht is divided into four windows. The first window asks the user to chose which language she/he wants to practice. The second demands that the user provide the text she/he wants to read later. In the text upload window, the user can choose one of the following options: 1) open a file already saved within the Brecht's directory, 2) Upload a file, and 3) Paste the text into Brecht. Brecht requires that the file used in options 1 and 2 has a .txt extension.
 
-The third window gives the user several options regarding specific informations about the upload text. For instance, in this information window, the user can list the text's words by grammatical class. Finally, the fourth window, which can be accessed by clicking in the button PLAY from the third window, presents the actual game. As stated above, this game consists in showing you all unknown words of the previously selected text, then let you play with them until you have enough knowledge of the meaning of most new words.
+The third window gives the user several options regarding specific information about the upload text. For instance, in this information window, the user can list the text's words by grammatical class. Finally, the fourth window, which can be accessed by clicking in the button PLAY from the third window, presents the actual game. As stated above, this game consists of showing you all unknown words of the previously selected text, then let you play with them until you have enough knowledge of the meaning of most new words.
 
 
 #### Further information
 
-Besides this README file, this repository also contains a TASKS files whose main intent is list all the tasks that must be achieve in order to finish the project. If you are considering to be a contributor of Brecht 0.0.2, please take a look in the remaining tasks.
+Besides this README file, this repository also contains a TASKS files whose main intent is to list all the tasks that must be achieved in order to finish the project. If you are considering to be a contributor of Brecht 0.0.2, please take a look at the remaining tasks.
 
 This game relies heavily on the python module [Spacy](https://spacy.io/)
