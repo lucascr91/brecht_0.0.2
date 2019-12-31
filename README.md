@@ -5,15 +5,21 @@
 #### A game to learn how to read in German
 
 
-Brecht is a simple game that I have been developing to help me to learn how to
- read in German. Despite having a complex grammar, I believe the true challenge for learning German, on the perspective of a Latin language native, is the Wortzschtaz (i.e., the vocabulary). That's why this game has an exclusive focus on building vocabulary. More specifically, its purpose is to present you all unknown words of a previously selected text that you want to read, then let you play with them until you have enough knowledge of the meaning of most new words. After playing the game, you are supposed to be ready to actually read the text.
+Brecht is a simple game that I have been developing to help me to learn how to read in German. Despite having a complex grammar, I believe the true challenge for learning German, on the perspective of a Latin language native, is the Wortzschtaz (i.e., the vocabulary). That's why this game has an exclusive focus on building vocabulary. More specifically, its purpose is to present you all unknown words of a previously selected text that you want to read, then let you play with them until you have enough knowledge of the meaning of most new words. After playing the game, you are supposed to be ready to actually read the text.
  
- [Here](https://github.com/lucascr91/brecht_0.0.1) you can find an early version of this game. I developed this version when I was in my very
-   beginner as a Python programmer, I am still a beginner, but I guess I have learned a few tricks since that first attempt. The version 0.0.1 is just
-     an interactive game which runs in terminal. It selects all words, and go on asking the player if she/he already knows that word. On negative
-       answers to this question, the program presents the translation of the word that it gets from the Deutsch version of the online [collins dictionary](https://www.collinsdictionary.com/dictionary/english-german). After the game, the words whose meaning the player now has marked as known words are saved and will not show in the next time she/he plays it.
+[Here](https://github.com/lucascr91/brecht_0.0.1) you can find an early version of this game. I developed this version when I was in my very beginner as a Python programmer, I am still a beginner, but I guess I have learned a few tricks since that first attempt. The version 0.0.1 is just an interactive game which runs in terminal. It selects all words, and go on asking the player if she/he already knows that word. On negative answers to this question, the program presents the translation of the word that it gets from the Deutsch version of the online [collins dictionary](https://www.collinsdictionary.com/dictionary/english-german). After the game, the words whose meaning the player now has marked as known words are saved and will not show in the next time she/he plays it.
 
 Besides this core model, the first version also has some additional features. For example, the player could play only with words that her/him has marked as "important" in all her/his previous sections.
+
+#### How to run Brecht 0.0.2
+
+If you use a Linux distribution and already have Python installed in your PC, just download this repository, open the terminal, go to the directory that you have just downloaded, and run the following command:
+
+```
+bash brecht_app.sh
+```
+
+
 
 #### How to use Brecht 0.0.2
 
