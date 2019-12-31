@@ -1,7 +1,7 @@
 # Brecht 0.0.2
 
-<!-- 
-![alt text](http://3.bp.blogspot.com/_iharoUHGx80/TUcc4dSaWvI/AAAAAAAAIp0/tbYEtWXe3LE/s1600/BertoltBrechtCaricatura.jpg) -->
+
+![alt text](https://github.com/lucascr91/brecht_0.0.2/blob/master/brecht_drawing.jpg?raw=true)
 #### A game to learn how to read in German
 
 
