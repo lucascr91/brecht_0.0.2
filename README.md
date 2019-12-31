@@ -11,6 +11,11 @@ Brecht is a simple game that I have been developing to help me to learn how to r
 
 Besides this core model, the first version also has some additional features. For example, the player could play only with words that her/him has marked as "important" in all her/his previous sections.
 
+While the first version addresses some needs that I think are required in a tool like that, it had also several limitations. That's why I have created a list of improvements that I would like to add to this version. To check this list, read the file IMPROVEMENTS.
+
+I hope that other language love programmers join me in this project. I believe that its basic model can easily be expanded to cover other languages and make the learning of a new language even funnier.
+
+
 #### How to run Brecht 0.0.2
 
 If you use a Linux distribution and already have Python installed in your PC, just download this repository, open the terminal, go to the directory that you have just downloaded, and run the following command:
