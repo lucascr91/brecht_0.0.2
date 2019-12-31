@@ -36,6 +36,6 @@ The third window gives the user several options regarding specific information a
 
 #### Further information
 
-Besides the files README, IMPROVEMENTS, and REQUIREMENTS, this repository also contains a TASKS files whose main intent is to list the tasks to be done in the current stage of the project development. If you are considering to be a contributor of Brecht 0.0.2, please take a look at the remaining tasks.
+Besides the files README, IMPROVEMENTS, and REQUIREMENTS, this repository also contains a TASKS files that lists the tasks to be done in the current stage of the project development. If you are considering to be a contributor of Brecht 0.0.2, please take a look at the remaining tasks.
 
 This game relies heavily on the python module [Spacy](https://spacy.io/)
