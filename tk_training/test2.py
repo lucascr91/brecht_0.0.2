@@ -1,0 +1,47 @@
+from tkinter import *
+
+def main():
+    root = Tk()
+    c = Canvas(root,width=600)
+    c.pack(side = 'left',expand=1,fill=BOTH)
+
+    c2 = Canvas(c,width=600)
+    c2.pack(side = 'left',expand=1,fill=BOTH)
+    c3 = Canvas(c,width=600)
+    c3.pack(side = 'left',expand=1,fill=BOTH)
+
+    w1 = Label(c2, text="Controller value")
+    w1.pack()
+    e = Entry(c2)
+    e.pack()
+    w2 = Label(c2, text="Velocity")
+    w2.pack()
+    e1 = Entry(c2)
+    e1.pack()
+    w3 = Label(c2, text="Desired Heading")
+    w3.pack()
+    e2 = Entry(c2)
+    e2.pack()
+    toolbar = Frame(c2)
+    b = Button(toolbar, text="save", width=9, command=lambda:save(e,e1,e2))
+    b.pack(side='left', padx=2, pady=2)
+    toolbar.pack(side=TOP, fill=X)
+
+    lt = Label(c3,text='Controller')
+    lt.pack(side='top',expand=1,fill='x')
+    l = Label(c3,text='',bg='red')
+    l.pack(side='top',expand=1,fill='x')
+    lt2 = Label(c3,text='Velocity')
+    lt2.pack(side='top',expand=1,fill='x')
+    l2 = Label(c3,text='',bg='yellow')
+    l2.pack(side='top',expand=1,fill='x')
+    lt3 = Label(c3,text='Desired Heading')
+    lt3.pack(side='top',expand=1,fill='x')
+    l3 = Label(c3,text='',bg='blue')
+    l3.pack(side='top',expand=1,fill='x')
+
+    b2 = Button(c3,text='load',command=lambda:loadme(l,l2,l3))
+    b2.pack(fill='x', padx=2, pady=2)
+    root.mainloop()
+
+main()
