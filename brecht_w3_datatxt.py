@@ -1,11 +1,20 @@
 import tkinter as tk
 from tkinter import ttk
 import brecht as br
+import tkinter.font as font
 
-root = tk.Tk()
-# root.geometry('600x400')
-root.title('Brecht 0.0.2')
-root.resizable(False, False)
+class Third_window(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Brecht 0.0.2')
+        self.resizable(False, False)
+
+root = Third_window()
+
+font.nametofont('TkDefaultFont').configure(size = 15)
+
+
 
 user_text = tk.StringVar()
 
@@ -35,60 +44,64 @@ def print_text():
     actual_txt = text.actual_text
     return text_widget.insert("1.0", str(actual_txt))
 
+
+
 #********************************************FRAMES**********************************
 
-#FRAME ENTER/QUIT
-EnterQuit_Frame = ttk.Frame(root, padding = (30,15))
-EnterQuit_Frame.pack(side = 'bottom')
+class EnterQuit_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
 
-#FRAME BUTTONS
-Button_Frame = ttk.Frame(root, padding = (30,15))
-Button_Frame.pack(side = 'left')
+        next_button = ttk.Button(self, text = 'Next', command = root.destroy)
+        next_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
 
-#FRAME TEXT
-Text_Frame = ttk.Frame(root, padding = (30,15))
-Text_Frame.pack(side = 'left')
+        quit_button = ttk.Button(self, text = 'Quit', command = root.destroy)
+        quit_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
+
+class Button_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
+        #BUTTON LIST ADJECTIVES
+        adj_button = ttk.Button(self, text = 'List Adjectives', command = print_adjectives)
+        adj_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
+
+        #BUTTON LIST NOUNS
+        nouns_button = ttk.Button(self, text = 'List Nouns', command = print_nouns)
+        nouns_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
+
+        #BUTTON LIST VERBS
+        verbs_button = ttk.Button(self, text = 'List Verbs', command = print_verbs)
+        verbs_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
+
+        #BUTTON FULL TEXT
+        text_button = ttk.Button(self, text = 'Full Text', command = print_text)
+        text_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
+
+ 
+class Text_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
 
 
-#********************************************WIDGETS**********************************
+
+#FRAMES
+frame1 = EnterQuit_Frame(root)
+frame1.pack(side = 'bottom')
+
+frame2 = Button_Frame(root)
+frame2.pack(side = 'left')
+
+frame3 = Text_Frame(root)
+frame3.pack(side = 'left')
 
 #WIDGET TEXT
-text_widget = tk.Text(Text_Frame) 
+text_widget = tk.Text(frame3)
 text_widget.pack()
 
-#********************************************BUTTONS**********************************
 
-#BUTTON LIST ADJECTIVES
-adj_button = ttk.Button(Button_Frame, text = 'List Adjectives', command = print_adjectives)
-adj_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
-
-#BUTTON LIST NOUNS
-nouns_button = ttk.Button(Button_Frame, text = 'List Nouns', command = print_nouns)
-nouns_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
-
-#BUTTON LIST VERBS
-verbs_button = ttk.Button(Button_Frame, text = 'List Verbs', command = print_verbs)
-verbs_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
-
-#BUTTON FULL TEXT
-text_button = ttk.Button(Button_Frame, text = 'Full Text', command = print_text)
-text_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
-
-#BUTTON NEXT
-quit_button = ttk.Button(EnterQuit_Frame, text = 'Next', command = root.destroy)
-quit_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
-
-#BUTTON QUIT
-quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
-quit_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
-
-
-#********************************************SCROLLBAR**********************************
-
-text_scroll = ttk.Scrollbar(Text_Frame, orient = 'vertical', command = text_widget.yview)
+text_scroll = ttk.Scrollbar(frame3, orient = 'vertical', command = text_widget.yview)
 text_scroll.pack(fill ='both', expand = True)
 text_widget['yscrollcommand'] = text_scroll.set
-
 
 root.mainloop()
 

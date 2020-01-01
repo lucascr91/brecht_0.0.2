@@ -6,35 +6,12 @@ from PIL import ImageTk, Image
 from time import sleep
 
 
-
-#******************LOADING WINDOW***************************
-
-def task():
-    # The window will stay open until this function call ends.
-    sleep(4) # Replace this with the code you want to run
-    loading.destroy()
-
-loading = tk.Tk()
-loading.geometry('600x400')
-loading.title('Brecht 0.0.2')
-
-font.nametofont('TkDefaultFont').configure(size = 15)
-
-
-label = tk.Label(loading, text="Loading ...")
-label.pack()
-img = ImageTk.PhotoImage(Image.open('brecht_drawing.jpg'))
-panel = tk.Label(loading, image = img)
-panel.pack(side = "bottom", fill = "both", expand = "yes")
-loading.after(200, task)
-loading.mainloop()
-
- #****************END LOADING WINDOW************************
-
 root = tk.Tk()
 root.geometry('600x400')
 root.title('Brecht 0.0.2')
 root.resizable(False, False)
+
+font.nametofont('TkDefaultFont').configure(size = 15)
 
 
 user_text = tk.StringVar()
@@ -60,6 +37,9 @@ EnterQuit_Frame = ttk.Frame(root, padding = (30,5))
 EnterQuit_Frame.pack(side = 'top')
 
 #********************************************WIDGETS**********************************
+
+
+
 
 
 #WIDGET LABEL
@@ -89,15 +69,36 @@ quit_button.pack(side = 'left',  fill = 'x')
 quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
 quit_button.pack(side = 'left', fill = 'x')
 
-#********************************************WINFO_CHILDREN**********************************
-# for child in Text_Frame.winfo_children:
-#     child.pack_configure(padx =5, pady = 5,)
+#******************LOADING WINDOW***************************
 
-#********************************************SCROLLBAR**********************************
+def task():
+    sleep(4)
+    Loading_Frame.destroy()
 
-# text_scroll = ttk.Scrollbar(root, orient = 'vertical')
-# text_scroll.pack(row =0, column = 2, sticky = 'ns')
-# text_entry['yscrollcommand'] = text_scroll.set
+
+Loading_Frame = ttk.Frame(root, padding = (30,5))
+Loading_Frame.pack(side = 'top', fill = "both", expand = "yes")
+
+label = tk.Label(Loading_Frame, text="Loading ...")
+label.pack()
+img = ImageTk.PhotoImage(Image.open('brecht_drawing.jpg'))
+panel = tk.Label(Loading_Frame, image = img)
+panel.pack(side = "top", fill = "both", expand = "yes")
+Loading_Frame.after(200, task)
+
+
+ #****************END LOADING WINDOW************************
+
+frames = dict()
+
+frames['loading'] = Loading_Frame
+frames['upload'] = Upload_Frame
+frames['text'] = Text_Frame
+frames['enter_quit'] = EnterQuit_Frame
+
+
+
+Loading_Frame.tkraise()
 
 
 root.mainloop()
