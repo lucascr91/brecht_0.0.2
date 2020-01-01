@@ -3,7 +3,7 @@ from tkinter import ttk
 import brecht as br
 
 root = tk.Tk()
-root.geometry('600x400')
+# root.geometry('600x400')
 root.title('Brecht 0.0.2')
 root.resizable(False, False)
 
@@ -20,13 +20,13 @@ def create_file():
     f.close
 
 #********************************************FRAMES**********************************
-Upload_Frame = ttk.Frame(root, padding = (30,15))
+Upload_Frame = ttk.Frame(root, padding = (30,5))
 Upload_Frame.pack(side = 'top')
 
-Text_Frame = ttk.Frame(root, padding = (30,15))
+Text_Frame = ttk.Frame(root, padding = (10,15))
 Text_Frame.pack(side = 'top')
 
-EnterQuit_Frame = ttk.Frame(root, padding = (30,15))
+EnterQuit_Frame = ttk.Frame(root, padding = (30,5))
 EnterQuit_Frame.pack(side = 'top')
 
 #********************************************WIDGETS**********************************
