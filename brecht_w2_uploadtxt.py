@@ -1,19 +1,49 @@
 import tkinter as tk
 from tkinter import ttk
+import tkinter.font as font
 import brecht as br
+from PIL import ImageTk, Image
+from time import sleep
+
+
+
+#******************LOADING WINDOW***************************
+
+def task():
+    # The window will stay open until this function call ends.
+    sleep(4) # Replace this with the code you want to run
+    loading.destroy()
+
+loading = tk.Tk()
+loading.geometry('600x400')
+loading.title('Brecht 0.0.2')
+
+font.nametofont('TkDefaultFont').configure(size = 15)
+
+
+label = tk.Label(loading, text="Loading ...")
+label.pack()
+img = ImageTk.PhotoImage(Image.open('brecht_drawing.jpg'))
+panel = tk.Label(loading, image = img)
+panel.pack(side = "bottom", fill = "both", expand = "yes")
+loading.after(200, task)
+loading.mainloop()
+
+ #****************END LOADING WINDOW************************
 
 root = tk.Tk()
-# root.geometry('600x400')
+root.geometry('600x400')
 root.title('Brecht 0.0.2')
 root.resizable(False, False)
 
+
 user_text = tk.StringVar()
 
-def create_instance():
+def create_instance(*args):
     global text
     text = br.Text(user_text.get())
 
-def create_file():
+def create_file(*args):
     user_input = text_entry.get("1.0", 'end-1c')
     f = open('user_text.txt', 'w')
     f.write(user_input)
@@ -37,7 +67,7 @@ open_label = ttk.Label(Upload_Frame, text='Open local file: ')
 open_label.pack(side = 'left')
 
 #WIDGET ENTRY
-open_entry = ttk.Entry(Upload_Frame, textvariable = user_text)
+open_entry = ttk.Entry(Upload_Frame, textvariable = user_text, font = ('Segoe UI', 15))
 open_entry.pack(side = 'left', fill = 'x')
 open_entry.focus()
 
@@ -53,12 +83,15 @@ text_entry.pack(side = 'top', fill = 'both')
 
 #BUTTON SEND
 quit_button = ttk.Button(EnterQuit_Frame, text = 'Send text', command = create_file)
-quit_button.pack(side = 'left')
+quit_button.pack(side = 'left',  fill = 'x')
 
 #BUTTON QUIT
 quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
-quit_button.pack(side = 'left')
+quit_button.pack(side = 'left', fill = 'x')
 
+#********************************************WINFO_CHILDREN**********************************
+# for child in Text_Frame.winfo_children:
+#     child.pack_configure(padx =5, pady = 5,)
 
 #********************************************SCROLLBAR**********************************
 
