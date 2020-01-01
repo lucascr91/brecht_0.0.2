@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-## This file contains the classes and functions used in the game
+## This file contains the classes used in the game
 
 import pickle
 import spacy

@@ -13,12 +13,21 @@ def create_instance():
     global text
     text = br.Text(user_text.get())
 
+def create_file():
+    user_input = text_entry.get("1.0", 'end-1c')
+    f = open('user_text.txt', 'w')
+    f.write(user_input)
+    f.close
+
 #********************************************FRAMES**********************************
-Upload_Frame = ttk.Frame(root)
+Upload_Frame = ttk.Frame(root, padding = (30,15))
 Upload_Frame.pack(side = 'top')
 
-Text_Frame = ttk.Frame(root)
+Text_Frame = ttk.Frame(root, padding = (30,15))
 Text_Frame.pack(side = 'top')
+
+EnterQuit_Frame = ttk.Frame(root, padding = (30,15))
+EnterQuit_Frame.pack(side = 'top')
 
 #********************************************WIDGETS**********************************
 
@@ -34,17 +43,21 @@ open_entry.focus()
 
 
 #WIDGET LABEL
-paste_label = ttk.Label(Text_Frame, text='Paste: ')
+paste_label = ttk.Label(Text_Frame, text='or paste your text here: ')
 paste_label.pack(side = 'top')
 
 #WIDGET TEXT
-text_entry = ttk.Entry(Text_Frame, textvariable = user_text) 
-text_entry.pack(side = 'left', fill = 'both')
+text_entry = tk.Text(Text_Frame, height=20, width=40) 
+text_entry.pack(side = 'top', fill = 'both')
 
+
+#BUTTON SEND
+quit_button = ttk.Button(EnterQuit_Frame, text = 'Send text', command = create_file)
+quit_button.pack(side = 'left')
 
 #BUTTON QUIT
-quit_button = ttk.Button(Text_Frame, text = 'Quit', command = root.destroy)
-quit_button.pack(side = 'top')
+quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
+quit_button.pack(side = 'left')
 
 
 #********************************************SCROLLBAR**********************************

@@ -9,9 +9,11 @@ root.resizable(False, False)
 
 user_text = tk.StringVar()
 
-def create_instance():
-    global text
-    text = br.Text(user_text.get())
+f = open('user_text.txt', 'r')
+user_text = f.read()
+f.close()
+
+text = br.Text(user_text)
 
 def print_adjectives():
     global adjectives
@@ -35,63 +37,56 @@ def print_text():
 
 #********************************************FRAMES**********************************
 
+#FRAME TEXT
+EnterQuit_Frame = ttk.Frame(root, padding = (30,15))
+EnterQuit_Frame.pack(side = 'bottom')
+
 #FRAME BUTTONS
-Button_Frame = ttk.Frame(root)
-Button_Frame.grid(sticky = 'NS')
+Button_Frame = ttk.Frame(root, padding = (30,15))
+Button_Frame.pack(side = 'left')
 
 #FRAME TEXT
-Text_Frame = ttk.Frame(root)
-Text_Frame.grid(row =0, column =1, sticky = 'NS', padx=20, pady=20)
+Text_Frame = ttk.Frame(root, padding = (30,15))
+Text_Frame.pack(side = 'left')
+
 
 #********************************************WIDGETS**********************************
 
-
-#WIDGET LABEL
-name_label = ttk.Label(Button_Frame, text='Text: ')
-name_label.grid(row =0, column = 0)
-
-#WIDGET ENTRY
-name_entry = ttk.Entry(Button_Frame, textvariable = user_text)
-name_entry.grid(row = 0, column = 1)
-name_entry.focus()
-
 #WIDGET TEXT
 text_widget = tk.Text(Text_Frame) 
-text_widget.grid()
+text_widget.pack()
 
 #********************************************BUTTONS**********************************
 
-
-#BUTTON GO
-go_button = ttk.Button(Button_Frame, text = 'Go', command = create_instance)
-go_button.grid(row = 1, column = 0, sticky = 'WE', columnspan = 2)
-
 #BUTTON LIST ADJECTIVES
 adj_button = ttk.Button(Button_Frame, text = 'List Adjectives', command = print_adjectives)
-adj_button.grid(row = 2, column = 0, sticky = 'WE', columnspan = 2)
+adj_button.pack(side = 'top')
 
 #BUTTON LIST NOUNS
 nouns_button = ttk.Button(Button_Frame, text = 'List Nouns', command = print_nouns)
-nouns_button.grid(row = 3, column = 0, sticky = 'WE', columnspan = 2)
+nouns_button.pack(side = 'top')
 
 #BUTTON LIST VERBS
 verbs_button = ttk.Button(Button_Frame, text = 'List Verbs', command = print_verbs)
-verbs_button.grid(row = 4, column = 0, sticky = 'WE', columnspan = 2)
+verbs_button.pack(side = 'top')
 
 #BUTTON FULL TEXT
 text_button = ttk.Button(Button_Frame, text = 'Full Text', command = print_text)
-text_button.grid(row = 5, column = 0, sticky = 'WE', columnspan = 2)
+text_button.pack(side = 'top')
 
+#BUTTON NEXT
+quit_button = ttk.Button(EnterQuit_Frame, text = 'Next', command = root.destroy)
+quit_button.pack(side = 'left')
 
 #BUTTON QUIT
-quit_button = ttk.Button(Button_Frame, text = 'Quit', command = root.destroy)
-quit_button.grid(row = 6, column = 0, sticky = 'WE', columnspan = 2)
+quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
+quit_button.pack(side = 'left')
 
 
 #********************************************SCROLLBAR**********************************
 
 text_scroll = ttk.Scrollbar(Text_Frame, orient = 'vertical', command = text_widget.yview)
-text_scroll.grid(row =0, column = 2, sticky = 'ns')
+text_scroll.pack(fill ='both', expand = True)
 text_widget['yscrollcommand'] = text_scroll.set
 
 
