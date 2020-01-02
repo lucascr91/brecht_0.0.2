@@ -1,58 +1,27 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
 
 
 doc = nlp(text)
 
-
-# In[3]:
-
-
-verbs = [token.lemma_ for token in doc if token.pos_ == "VERB"]
-
-verbs
+text_words = [token.lemma_ for token in doc if token.pos_ == "VERB"]
 
 
-# In[ ]:
+pickle_in = open('dictionaries/brecht_uservocab.pkl', 'rb')
+brecht_uservocab = pickle.load(pickle_in)
 
-
-pickle_in = open('lista_voc.pkl', 'rb')
-lista_voc = pickle.load(pickle_in)
-
-
-# In[ ]:
-
-
-unique_voc = list(set(lista_voc))
-unique_txt = list(set(lista_nouns_t))
-
-
-# In[ ]:
-
+unique_voc = list(set(brecht_uservocab))
+unique_txt = list(set(text_words))
 
 intersection = [i for i in unique_txt if i in unique_voc]
 
+rz = len(intersection)/len(text_words)
 
-# In[ ]:
-
-
-rz = len(intersection)/len(lista_nouns_t)
-
-
-# In[ ]:
-
-
-print("I identify " + str(len(lista_nouns_t)) + " unique words.")
+print("I identify " + str(len(text_words)) + " unique words.")
 print('You know ' + str(round(rz*100,2)) + '% of them')
 print('How many words do you wanna play now?')
 m= int(input())
-
-
-# ### Abrindo o dicionário
-
-# In[ ]:
 
 
 pickle_in = open('dict.pickle', 'rb')
@@ -60,40 +29,22 @@ my_dct = pickle.load(pickle_in)
 
 
 # ### Abrindo lista de não encontrados
-
-# In[ ]:
-
-
 pickle_in2 = open('lista_not_found.pkl', 'rb')
 lista_not_found = pickle.load(pickle_in2)
 
 
 # ### Salvando o dicionário atualizado
-
-# In[7]:
-
-
 pickle_out = open('brecht_dict.pkl', 'wb')
 pickle.dump(brecht_dict, pickle_out)
 pickle_out.close()
 
 
-# ### Selecionando palavras encontradas
-
-# In[ ]:
-
-
 current_dict = {k: my_dct[k] for k in word_vector_final if k in my_dct}
-
-
-# In[ ]:
 
 
 print('I could not find the meaning of '+ str(len(word_vector)-len(current_dict)) + ' words.' + '\n' +
 'So you will play the game with ' + str(len(current_dict)) )
 
-
-# In[ ]:
 
 
 answer2 = 'Ja'
@@ -109,7 +60,7 @@ while answer2 == 'Ja':
             print(Style.RESET_ALL)
             somenoun = random.sample(my_dct2.keys(), 1)[0]
         elif answer1 == 'vocabulary':
-            lista_voc.append(somenoun)
+            dictionaries/brecht_uservocab.append(somenoun)
             del my_dct2[somenoun]
             if my_dct2 !={}:
                 somenoun = random.sample(my_dct2.keys(), 1)[0]
@@ -147,58 +98,28 @@ else:
 
 # ### Salvando vocabulário (lista)
 
-# In[ ]:
-
-
-pickle_out = open('lista_voc.pkl', 'wb')
-pickle.dump(list(set(lista_voc)), pickle_out)
+pickle_out = open('dictionaries/brecht_uservocab.pkl', 'wb')
+pickle.dump(list(set(dictionaries/brecht_uservocab)), pickle_out)
 pickle_out.close()
 
+print('Now you know ' + str(len(list(set(dictionaries/brecht_uservocab)))) + ' words in German')
 
-# In[ ]:
+s = random.sample(list(range(0,len(text_words_t))),m)
 
-
-print('Now you know ' + str(len(list(set(lista_voc)))) + ' words in German')
-
-
-# ### Criando um vetor com o número de palavras solicitadas pelo usuário a partir do número total de palavras do texto
-
-# In[ ]:
-
-
-s = random.sample(list(range(0,len(lista_nouns_t))),m)
-
-
-# In[ ]:
-
-
-word_vector = itemgetter(*s)(lista_nouns_t)
+word_vector = itemgetter(*s)(text_words_t)
 
 
 # ### Selecionando palavras que não tem no dicionário
 
-# In[ ]:
-
-
 lista_nodict = [i for i in word_vector if i not in list(my_dct.keys())]
-
-
-# In[ ]:
 
 
 print('I need to download the meaning of ' + str(len(lista_nodict)) + ' words')
 
-
-# In[ ]:
-
-
-word_vector_final = list(set(word_vector)-set(lista_not_found)-set(lista_voc))
+word_vector_final = list(set(word_vector)-set(lista_not_found)-set(dictionaries/brecht_uservocab))
 
 
 # ### Salvando lista de não encontrados atualizada
-
-# In[1]:
-
 
 pickle_out = open('brecht_lista_not_found.pkl', 'wb')
 pickle.dump(list(set(brecht_not_found)), pickle_out)

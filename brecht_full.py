@@ -4,6 +4,8 @@ import tkinter.font as font
 import brecht as br
 from PIL import ImageTk, Image
 from time import sleep
+from ttkthemes import ThemedStyle
+
 
 
 def create_instance(*args):
@@ -50,9 +52,12 @@ def print_text():
 class Brecht_Master(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.geometry('600x400')
+        # self.geometry('600x400')
         self.title('Brecht 0.0.2')
         self.resizable(False, False)
+#Style
+        style = ThemedStyle(self)
+        style.set_theme("arc")
 
 #*************CANONICAL FRAME****************************
 
@@ -110,6 +115,11 @@ class Button_Frame(ttk.Frame):
 
 root = Brecht_Master()
 
+# style1 = ttk.Style(window3)
+# style1.theme_use('classic')
+
+
+
 user_text = tk.StringVar()
 font.nametofont('TkDefaultFont').configure(size = 15)
 
@@ -135,6 +145,7 @@ text_scroll = ttk.Scrollbar(text_w3, orient = 'vertical', command = text_widget3
 text_scroll.pack(fill ='both', expand = True)
 text_widget3['yscrollcommand'] = text_scroll.set
 
+
 #*********************WINDOW 2******************************
 
 window2 = Canonical(root)
@@ -156,7 +167,7 @@ enter_quit.pack(side = 'top')
 #******************WELCOME WINDOW***************************
 
 def task():
-    sleep(4)
+    sleep(5)
     Loading_Frame.destroy()
 
 
@@ -169,6 +180,7 @@ img = ImageTk.PhotoImage(Image.open('brecht_drawing.jpg'))
 panel = tk.Label(Loading_Frame, image = img)
 panel.pack(side = "top", fill = "both", expand = "yes")
 Loading_Frame.after(200, task)
+
 
 
  #****************END WELCOME WINDOW************************
