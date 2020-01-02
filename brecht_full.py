@@ -5,7 +5,15 @@ import brecht as br
 from PIL import ImageTk, Image
 from time import sleep
 from ttkthemes import ThemedStyle
+import spacy
+from tkinter.font import Font
 
+
+
+def create_nlp():
+    global nlp
+    nlp = spacy.load(selected_language)
+    return nlp
 
 
 def create_instance(*args):
@@ -113,6 +121,35 @@ class Button_Frame(ttk.Frame):
         text_button = ttk.Button(self, text = 'Full Text', command = print_text)
         text_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
 
+class Radio_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
+
+        option_one = ttk.Radiobutton(
+            self,
+            text="Deutsch",
+            variable=storage_variable,
+            value="de"
+        )
+
+        option_two = ttk.Radiobutton(
+            self,
+            text="English",
+            variable=storage_variable,
+            value="en"
+        )
+
+        option_three = ttk.Radiobutton(
+            self,
+            text="Français",
+            variable=storage_variable,
+            value="fr"
+        )
+
+        option_one.pack(side = 'top', padx = 5, pady = 5, fill = 'both')
+        option_two.pack(side = 'top', padx = 5, pady = 5, fill = 'both')
+        option_three.pack(side = 'top', padx = 5, pady = 5, fill = 'both')
+
 root = Brecht_Master()
 
 # style1 = ttk.Style(window3)
@@ -164,21 +201,44 @@ text_w2.pack(side ='top')
 enter_quit = Quit_Frame(window2, 'Send Text', combine_funcs(create_file, create_instance, window2.destroy))
 enter_quit.pack(side = 'top')
 
+#*********************WINDOW 1******************************
+
+window1 = Canonical(root)
+window1.grid(row=0, column=0, sticky="NSEW")
+
+question = ttk.Label(window1, 
+text = 'Please, choose one language to practice:', )
+question.pack(side = 'top', padx = 5, pady = 40, ipady = 10)
+
+storage_variable = tk.StringVar()
+
+radio_buttons = Radio_Frame(window1)
+radio_buttons.pack(side = 'top', ipady = 10, ipadx = 10)
+
+
+enter_quit = Quit_Frame(window1, 'Next', combine_funcs(create_nlp, window1.destroy))
+enter_quit.pack(side = 'bottom')
+
+selected_language = storage_variable.get()
+
+
 #******************WELCOME WINDOW***************************
 
 def task():
-    sleep(5)
+    sleep(4)
     Loading_Frame.destroy()
 
+style = ttk.Style()
+style.configure("Bold.TLabel", font=("TkDefaultFont", 16, "bold"))
 
 Loading_Frame = Canonical(root)
 Loading_Frame.grid(row=0, column=0, sticky="NSEW")
 
-label = tk.Label(Loading_Frame, text="WELCOME")
-label.pack()
 img = ImageTk.PhotoImage(Image.open('brecht_drawing.jpg'))
-panel = tk.Label(Loading_Frame, image = img)
+panel = tk.Label(Loading_Frame, image = img, bg = 'white')
 panel.pack(side = "top", fill = "both", expand = "yes")
+label = ttk.Label(Loading_Frame, text="WELCOME", style = 'Bold.TLabel')
+label.pack()
 Loading_Frame.after(200, task)
 
 
