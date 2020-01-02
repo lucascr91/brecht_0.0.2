@@ -8,14 +8,15 @@ import spacy
 from selenium import webdriver
 import tkinter as tk
 from tkinter import ttk
+nlp = spacy.load('fr')
 
 # ## Opening local dictionary
-pickle_in = open('dictionaries/brecht_dict.pkl', 'rb')
+pickle_in = open('dictionaries_FR/brecht_dict_FR.pkl', 'rb')
 brecht_dict = pickle.load(pickle_in)
 
 
 # ## Opening not found list
-pickle_in2 = open('dictionaries/brecht_lista_not_found.pkl', 'rb')
+pickle_in2 = open('dictionaries_FR/brecht_lista_not_found_FR.pkl', 'rb')
 lista_not_found = pickle.load(pickle_in2)
 
 class Text():
