@@ -23,6 +23,13 @@ If you use a Linux distribution and already have Python installed in your PC, ju
 ```
 bash brecht_app.sh
 ```
+Similarly, if you are on Windows, open the conda prompt inside the downloaded directory and run:
+
+```
+python brecht_full.py
+```
+
+
 To see the list of python modules you need to run Brecht, see the file REQUIREMENTS
 
 
