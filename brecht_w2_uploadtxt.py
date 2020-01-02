@@ -6,68 +6,93 @@ from PIL import ImageTk, Image
 from time import sleep
 
 
-root = tk.Tk()
-root.geometry('600x400')
-root.title('Brecht 0.0.2')
-root.resizable(False, False)
-
-font.nametofont('TkDefaultFont').configure(size = 15)
-
-
-user_text = tk.StringVar()
-
 def create_instance(*args):
     global text
     text = br.Text(user_text.get())
 
 def create_file(*args):
-    user_input = text_entry.get("1.0", 'end-1c')
+    user_input = text_widget.get("1.0", 'end-1c')
     f = open('user_text.txt', 'w')
     f.write(user_input)
     f.close
 
-#********************************************FRAMES**********************************
-Upload_Frame = ttk.Frame(root, padding = (30,5))
-Upload_Frame.pack(side = 'top')
+class Brecht_Master(tk.Tk):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.geometry('600x400')
+        self.title('Brecht 0.0.2')
+        self.resizable(False, False)
 
-Text_Frame = ttk.Frame(root, padding = (10,15))
-Text_Frame.pack(side = 'top')
+    #     self.frames = dict()
 
-EnterQuit_Frame = ttk.Frame(root, padding = (30,5))
-EnterQuit_Frame.pack(side = 'top')
+    #     container = ttk.Frame(self)
+    #     container.pack()
 
-#********************************************WIDGETS**********************************
+    #     for FrameClass in (Loading_Window, Second_Window):
+    #         frame = FrameClass(container, self)
+    #         self.frames[FrameClass] = frame
+    #         frame.grid(row=0, column=0, sticky="NSEW")
 
+    # def show_frame(self, container):
+    #     frame = self.frames[container]
+    #     frame.tkraise()
 
+class Second_Window(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
 
+class Upload_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
 
+        #WIDGET LABEL
+        open_label = ttk.Label(self, text='Open local file: ')
+        open_label.pack(side = 'left')
 
-#WIDGET LABEL
-open_label = ttk.Label(Upload_Frame, text='Open local file: ')
-open_label.pack(side = 'left')
+        #WIDGET ENTRY
+        open_entry = ttk.Entry(self, textvariable = user_text, font = ('Segoe UI', 15))
+        open_entry.pack(side = 'left', fill = 'x')
+        open_entry.focus()
 
-#WIDGET ENTRY
-open_entry = ttk.Entry(Upload_Frame, textvariable = user_text, font = ('Segoe UI', 15))
-open_entry.pack(side = 'left', fill = 'x')
-open_entry.focus()
+class Text_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
 
+        #WIDGET LABEL
+        paste_label = ttk.Label(self, text='or paste your text here: ')
+        paste_label.pack(side = 'top')
 
-#WIDGET LABEL
-paste_label = ttk.Label(Text_Frame, text='or paste your text here: ')
-paste_label.pack(side = 'top')
+class EnterQuit_Frame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
+        #BUTTON SEND
+        quit_button = ttk.Button(self, text = 'Send text', command = create_file)
+        quit_button.pack(side = 'left',  fill = 'x')
+
+        #BUTTON QUIT
+        quit_button = ttk.Button(self, text = 'Quit', command = root.destroy)
+        quit_button.pack(side = 'left', fill = 'x')
+
+root = Brecht_Master()
+
+user_text = tk.StringVar()
+
 
 #WIDGET TEXT
-text_entry = tk.Text(Text_Frame, height=20, width=40) 
-text_entry.pack(side = 'top', fill = 'both')
 
 
-#BUTTON SEND
-quit_button = ttk.Button(EnterQuit_Frame, text = 'Send text', command = create_file)
-quit_button.pack(side = 'left',  fill = 'x')
+font.nametofont('TkDefaultFont').configure(size = 15)
 
-#BUTTON QUIT
-quit_button = ttk.Button(EnterQuit_Frame, text = 'Quit', command = root.destroy)
-quit_button.pack(side = 'left', fill = 'x')
+window2 = Second_Window(root)
+window2.grid(row=0, column=0, sticky="NSEW")
+upload = Upload_Frame(window2)
+upload.pack(side ='top')
+text_w2 = Text_Frame(window2)
+text_widget = tk.Text(text_w2)
+text_widget.pack(side = 'top')
+text_w2.pack(side ='top')
+enter_quit = EnterQuit_Frame(window2)
+enter_quit.pack(side = 'top')
 
 #******************LOADING WINDOW***************************
 
@@ -77,7 +102,7 @@ def task():
 
 
 Loading_Frame = ttk.Frame(root, padding = (30,5))
-Loading_Frame.pack(side = 'top', fill = "both", expand = "yes")
+Loading_Frame.grid(row=0, column=0, sticky="NSEW")
 
 label = tk.Label(Loading_Frame, text="Loading ...")
 label.pack()
@@ -88,18 +113,6 @@ Loading_Frame.after(200, task)
 
 
  #****************END LOADING WINDOW************************
-
-frames = dict()
-
-frames['loading'] = Loading_Frame
-frames['upload'] = Upload_Frame
-frames['text'] = Text_Frame
-frames['enter_quit'] = EnterQuit_Frame
-
-
-
-Loading_Frame.tkraise()
-
 
 root.mainloop()
 

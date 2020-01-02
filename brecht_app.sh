@@ -1,1 +1,1 @@
-python brecht_window3.py
+python brecht_full.py
