@@ -2,7 +2,6 @@
 # coding: utf-8
 
 import pickle
-import spacy
 import brecht_de as br
 import random
 
