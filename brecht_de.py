@@ -91,7 +91,7 @@ class Words():
                     driver.close()
             else:
                 lista_not_found.append(self.value)
-                return print('I could not find this word')
+                # return print('I could not find the word '+self.value)
                 driver.close()
         # method to print value
 
