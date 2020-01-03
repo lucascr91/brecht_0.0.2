@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import pickle
+import spacy
+import brecht_de as br
 
+text = br.Text('user_text.txt')
 
-doc = nlp(text)
+text_words = [token.lemma_ for token in text.doc if token.pos_ == "VERB"]
 
-text_words = [token.lemma_ for token in doc if token.pos_ == "VERB"]
+lang = 'DE'
 
-
-pickle_in = open('dictionaries/brecht_uservocab.pkl', 'rb')
+pickle_in = open('dictionaries_{0}/brecht_uservocab_{0}.pkl'.format(lang), 'rb')
 brecht_uservocab = pickle.load(pickle_in)
 
 unique_voc = list(set(brecht_uservocab))
@@ -24,25 +27,29 @@ print('How many words do you wanna play now?')
 m= int(input())
 
 
-pickle_in = open('dict.pickle', 'rb')
-my_dct = pickle.load(pickle_in)
+# Abre dicionário local
+pickle_in = open('dictionaries_{0}/brecht_dict_{0}'.format(lang), 'rb')
+brecht_dict = pickle.load(pickle_in)
 
 
-# ### Abrindo lista de não encontrados
-pickle_in2 = open('lista_not_found.pkl', 'rb')
+# Abre lista de não encontrados
+pickle_in2 = open('dictionaries_{0}/lista_not_found_{0}.pkl'.format(lang), 'rb')
 lista_not_found = pickle.load(pickle_in2)
 
+# Adiciona palavras ao dicionário local
+for word in text_words:
+    brecht_dict[word] = br.Words(word).meaning
 
-# ### Salvando o dicionário atualizado
-pickle_out = open('brecht_dict.pkl', 'wb')
+# Salvando o dicionário atualizado
+pickle_out = open('dictionaries_{0}/brecht_dict_{0}'.format(lang), 'wb')
 pickle.dump(brecht_dict, pickle_out)
 pickle_out.close()
 
 
-current_dict = {k: my_dct[k] for k in word_vector_final if k in my_dct}
+current_dict = {k: brecht_dict[k] for k in text_words if k in brecht_dict}
 
 
-print('I could not find the meaning of '+ str(len(word_vector)-len(current_dict)) + ' words.' + '\n' +
+print('I could not find the meaning of '+ str(len(text_words)-len(current_dict)) + ' words.' + '\n' +
 'So you will play the game with ' + str(len(current_dict)) )
 
 
@@ -50,20 +57,20 @@ print('I could not find the meaning of '+ str(len(word_vector)-len(current_dict)
 answer2 = 'Ja'
 
 while answer2 == 'Ja':
-    my_dct2 = current_dict.copy()
-    somenoun = random.sample(my_dct2.keys(), 1)[0]
+    brecht_dict2 = current_dict.copy()
+    somenoun = random.sample(brecht_dict2.keys(), 1)[0]
     while somenoun !='':
         print('Do you know the meaning of the word "{}"?'.format(somenoun))
         answer1 = input()
         if answer1 == 'Nein':
-            print(Fore.YELLOW + my_dct2[somenoun])
+            print(Fore.YELLOW + brecht_dict2[somenoun])
             print(Style.RESET_ALL)
-            somenoun = random.sample(my_dct2.keys(), 1)[0]
+            somenoun = random.sample(brecht_dict2.keys(), 1)[0]
         elif answer1 == 'vocabulary':
             dictionaries/brecht_uservocab.append(somenoun)
-            del my_dct2[somenoun]
-            if my_dct2 !={}:
-                somenoun = random.sample(my_dct2.keys(), 1)[0]
+            del brecht_dict2[somenoun]
+            if brecht_dict2 !={}:
+                somenoun = random.sample(brecht_dict2.keys(), 1)[0]
             else:
                 print('Congratulations! You know all words from this text!')
                 somenoun =''
@@ -76,16 +83,16 @@ while answer2 == 'Ja':
             f.write(l)
             f.close()         
             
-#             del my_dct2[somenoun]
-            if my_dct2 !={}:
-                somenoun = random.sample(my_dct2.keys(), 1)[0]
+#             del brecht_dict2[somenoun]
+            if brecht_dict2 !={}:
+                somenoun = random.sample(brecht_dict2.keys(), 1)[0]
             else:
                 print('Congratulations! You know all words from this text!')
                 somenoun =''
         else:
-            del my_dct2[somenoun]
-            if my_dct2 !={}:
-                somenoun = random.sample(my_dct2.keys(), 1)[0]
+            del brecht_dict2[somenoun]
+            if brecht_dict2 !={}:
+                somenoun = random.sample(brecht_dict2.keys(), 1)[0]
             else:
                 print('Congratulations! You know all words from this text!')
                 somenoun =''
@@ -102,21 +109,13 @@ pickle_out = open('dictionaries/brecht_uservocab.pkl', 'wb')
 pickle.dump(list(set(dictionaries/brecht_uservocab)), pickle_out)
 pickle_out.close()
 
-print('Now you know ' + str(len(list(set(dictionaries/brecht_uservocab)))) + ' words in German')
+if lang=='DE':
+    print('Now you know ' + str(len(list(set(brecht_uservocab)))) + ' words in German')
+elif lang =='FR':
+    print('Now you know ' + str(len(list(set(brecht_uservocab)))) + ' words in French')
+elif lang == 'EN':
+    print('Now you know ' + str(len(list(set(brecht_uservocab)))) + ' words in English')
 
-s = random.sample(list(range(0,len(text_words_t))),m)
-
-word_vector = itemgetter(*s)(text_words_t)
-
-
-# ### Selecionando palavras que não tem no dicionário
-
-lista_nodict = [i for i in word_vector if i not in list(my_dct.keys())]
-
-
-print('I need to download the meaning of ' + str(len(lista_nodict)) + ' words')
-
-word_vector_final = list(set(word_vector)-set(lista_not_found)-set(dictionaries/brecht_uservocab))
 
 
 # ### Salvando lista de não encontrados atualizada
