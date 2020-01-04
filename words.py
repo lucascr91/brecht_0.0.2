@@ -7,9 +7,9 @@ import random
 
 text = br.Text('user_text.txt')
 
-adj = [token.lemma_ for token in text.doc if token.pos_ == "ADJ"]
-nouns = [token.lemma_ for token in text.doc if token.pos_ == "NOUN"]
-verbs = [token.lemma_ for token in text.doc if token.pos_ == "VERB"]
+adj = text.adjectives
+nouns = text.nouns
+verbs = text.verbs
 
 text_words = adj + nouns + verbs
 

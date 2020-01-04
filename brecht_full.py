@@ -19,7 +19,7 @@ def select_lang():
         global br
         import brecht_fr as br
     else:
-        print('Hi, my actual name is fucking' + str(selected_language))
+        print('Hi, my actual fucking name is ' + str(selected_language))
 
 def create_instance(*args):
     global text

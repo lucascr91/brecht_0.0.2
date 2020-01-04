@@ -31,8 +31,12 @@ def combine_funcs(*funcs):
             f(*args, **kwargs)
     return combined_func
 
-def function_so(widget):
-    return widget['text']
+def callback(event):
+    global answer1
+    #print(event)
+    answer1 = event.widget['text']
+
+
 
 def stats():
     global text_words
@@ -96,10 +100,10 @@ def start_game():
         somenoun = random.sample(brecht_dict2.keys(), 1)[0]
         while somenoun !='':
             text_widget4.insert('1.0','Do you know the meaning of the word "{}"?'.format(somenoun))
-            if function_so(no_button) == 'No':
+            if answer1 == 'No':
                 text_widget4.insert('2.0',brecht_dict2[somenoun])
                 somenoun = random.sample(brecht_dict2.keys(), 1)[0]
-            elif function_so(vocabulary_button) =='Vocabulary':
+            elif answer1 =='Vocabulary':
                 brecht_uservocab.append(somenoun)
                 del brecht_dict2[somenoun]
                 if brecht_dict2 !={}:
@@ -109,7 +113,7 @@ def start_game():
                     text_widget4.tag_configure("center", justify='center')
                     text_widget4.insert('1.0','Congratulations! You know all words from this text!')
                     somenoun =''
-            elif function_so(no_button)=='Important':
+            elif answer1=='Important':
                 brecht_userimportant.append(somenoun)
                 if brecht_dict2 !={}:
                     somenoun = random.sample(brecht_dict2.keys(), 1)[0]
@@ -137,7 +141,7 @@ def start_game():
         text_widget4.delete('1.0', 'end')
         text_widget4.tag_configure("center", justify='center')
         text_widget4.insert('1.0','Do you want to play this game again?')
-        if function_so(no_button)=='No':
+        if answer2=='No':
             print("Bye!")
             break
         else:
@@ -154,21 +158,21 @@ class Button_Frame(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
         #BUTTON YES
-        yes_button = ttk.Button(self, text = 'Yes')
-        yes_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
-        yes_button["command"] = lambda:function_so(yes_button)
+        button1 = ttk.Button(self, text = 'Yes')
+        button1.bind('<Button-1>', callback)
+        button1.pack(side = 'left', padx =5, pady = 5, fill = 'x')
 
 
         #BUTTON NO
-        no_button = ttk.Button(self, text = 'No')
-        no_button.pack(side = 'left', padx =5, pady = 5, fill = 'x', command = lambda: function('No'))
-        no_button["command"] = lambda:function_so(no_button)
+        button2 = ttk.Button(self, text = 'No')
+        button2.bind('<Button-2>', callback)
+        button2.pack(side = 'left', padx =5, pady = 5, fill = 'x')
 
 
         #BUTTON VOCABULARY
-        vocabulary_button = ttk.Button(self, text = 'Vocabulary', command = lambda: function('Vocabulary'))
-        vocabulary_button.pack(side = 'left', padx =5, pady = 5, fill = 'x')
-        vocabulary_button["command"] = lambda:function_so(vocabulary_button)
+        button3 = ttk.Button(self, text = 'Vocabulary')
+        button3.bind('<Button-3>', callback)
+        button3.pack(side = 'left', padx =5, pady = 5, fill = 'x')
 
 
 class Quit_Frame(ttk.Frame):
@@ -195,6 +199,8 @@ text_w4.pack(side = 'top', fill = 'both', expand = True)
 
 button_w4 = Button_Frame(root)
 button_w4.pack(side = 'bottom')
+# for n in ['1','2', '3']:
+#     button_w4.bind('<Button-{}>'.format(n), function_so)
 
 quit_w4 = Quit_Frame(root, 'Start', combine_funcs(stats, words_founded, start_game))
 quit_w4.pack(side = 'right')
