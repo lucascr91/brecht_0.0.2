@@ -46,21 +46,31 @@ def sort_words():
     selected_words = random.sample(text_words, 5)
 
 def callback(event):
-    if event.widget['text']=='Yes':
+    if event.widget['text']=='Skip':
         text_widget4.delete('1.0', 'end')
-        show_word(1)
-    elif event.widget['text']=='No':
+        selected_words.remove(selected_words[0])
+        show_word()
+    elif event.widget['text']=='Show me':
         text_widget4.delete('1.0', 'end')
+        meaning = br.Words(selected_words[0]).meaning
+        brecht_dict[selected_words[0]] = meaning
+        selected_words.remove(selected_words[0])
         return text_widget4.insert('1.0', 'Here is the meaning: \n'+
-        br.Words(selected_words[0]).meaning)
-    elif event.widget['text']=='Vocabulary':
-        brecht_uservocab.append(selected_words[0])
-        text_widget4.delete('1.0', 'end')
-        return text_widget4.insert('1.0', 'This word is now part of your vocabulary and it will not be show again')
+        meaning)
+        # Salvando o dicionário atualizado
+        pickle_out = open('dictionaries_{0}/brecht_dict_{0}'.format(lang), 'wb')
+        pickle.dump(brecht_dict, pickle_out)
+        pickle_out.close()
 
-def show_word(index = 0):
-    text_widget4.insert('1.0', 'Do you know the meaning of the word {}?'.format(selected_words[index]))
-    
+def show_word():
+    if len(selected_words)>0:
+        text_widget4.delete('1.0', 'end')
+        text_widget4.insert('1.0', '{}'.format(selected_words[0]), ["red_text","center_text", 'font20'])
+        text_widget4.place(relx=0.5, rely=0.5, anchor='n')
+    else:
+        text_widget4.delete('1.0', 'end')
+        text_widget4.insert('1.0', 'Congratulations! You finish the 5 words')
+
 
 class Fourth_window(tk.Tk):
     def __init__(self):
@@ -69,30 +79,29 @@ class Fourth_window(tk.Tk):
         self.title('Brecht 0.0.2')
         self.resizable(False, False)
 
-class Button_Frame(ttk.Frame):
+class Button_Frame_w4(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
 
-        button1 = ttk.Button(self, text = 'Yes')
+        button1 = ttk.Button(self, text = 'Show me')
         container.bind('<Button-1>', callback) 
         button1.pack(side = 'left')
 
-        button2 = ttk.Button(self, text = 'No')
+        button2 = ttk.Button(self, text = 'Skip')
         container.bind('<Button-2>', callback) 
         button2.pack(side = 'left')
 
-        button3 = ttk.Button(self, text = 'Vocabulary')
-        container.bind('<Button-3>', callback) 
-        button3.pack(side = 'left')
 
-
-class Quit_Frame(ttk.Frame):
+class Quit_Frame_w4(ttk.Frame):
     def __init__(self, container, label_1, function_1):
         super().__init__(container)
         self.label_1 = label_1
         self.function_1 = function_1
 
-        next_button = ttk.Button(self, text = label_1, command = function_1)
+        n_button = ttk.Button(self, text = label_1, command = function_1)
+        n_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
+        
+        next_button = ttk.Button(self, text = 'Next', command = show_word)
         next_button.pack(side = 'top', padx =5, pady = 5, fill = 'x')
 
         quit_button = ttk.Button(self, text = 'Quit', command = root.destroy)
@@ -105,17 +114,26 @@ class Canonical(ttk.Frame):
 
 root = Fourth_window()
 #FRAMES
+quit_w4 = Quit_Frame(root, 'Start new session', combine_funcs(sort_words, show_word))
+quit_w4.pack(side = 'left')
+
 text_w4 = Canonical(root)
 text_w4.pack(side = 'top', fill = 'both', expand = True)
 
 button_w4 = Button_Frame(root)
 button_w4.pack(side = 'bottom')
 
-quit_w4 = Quit_Frame(root, 'Start', combine_funcs(sort_words, show_word))
-quit_w4.pack(side = 'right')
 
 #WIDGETS
 text_widget4 = tk.Text(text_w4)
+text_widget4.insert('1.0', '''Hi, here a couple of instructions to play this game. The game is organized in sessions. 
+On each session, Brecht will show you 5 words. When you see one word that you already know, hit "SKIP" button and this word will not be show again.
+If you don't know the presented word, hit "SHOW ME" button and Brecht will show you the word meaning and translation to English. 
+When you finish with the 5 words, just hit "START NEW SESSION" to play the game again with new words.''', 'font14')
+text_widget4.tag_configure('font20', font=('Times',20))
+text_widget4.tag_configure('font14', font=('Times',14))
+text_widget4.tag_configure("red_text", foreground ='red')
+text_widget4.tag_configure("center_text", justify ='center')
 text_widget4.pack()
 
 
