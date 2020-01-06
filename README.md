@@ -18,15 +18,23 @@ I hope that other language love programmers join me in this project. I believe t
 
 #### How to run Brecht 0.0.2
 
-If you use a Linux distribution and already have Python installed in your PC, just download this repository, open the terminal, go to the directory that you have just downloaded, and run the following command:
+If you use a Linux distribution and already have Python installed in your PC, just download this repository, open the terminal, go to the directory that you have downloaded, and run the following command:
 
 ```
-bash brecht_app.sh
+bash install_requirements.sh
 ```
-Similarly, if you are on Windows, open the conda prompt inside the downloaded directory and run:
+Then, to launch Brecht run:
 
 ```
 python brecht_full.py
+
+```
+
+Similarly, if you are on Windows - after the installation of the require modules listed in the file REQIREMENTS - open the conda prompt inside the downloaded directory and run:
+
+```
+python brecht_full.py
+
 ```
 
 

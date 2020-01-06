@@ -81,7 +81,7 @@ class Words():
                          )  
             driver.get('https://de.thefreedictionary.com/{}'.format(self.value))
             word = driver.find_elements_by_xpath('//div[@id="Definition"]')
-            if word != []:
+            if (word != []) and (word[0].text!=None):
                 brecht_dict[self.value] = word[0].text
                 if self.first_meaning:
                     return word[0].text[:word[0].text.find('2.')]
