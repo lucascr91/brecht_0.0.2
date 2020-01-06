@@ -7,6 +7,7 @@
 | Link to my page is not working<sup>[1](#footnote1)</sup> | Welcome window |
 | Include "working with last upload text" option | Second window |
 | Get the meaning of all text words after the user upload text | Second window |
+| Add dictionary for French and English | Second/Fourth window |
 | Include a warning that the previous task takes some minutes | Second window |
 | Fix scroll roll | Third window
 | Create scroll roll | Fourth window
