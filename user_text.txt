@@ -1,70 +1,8 @@
-<<<<<<< HEAD
-Die Softwaretechnik oder Softwaretechnologie, englisch Software Engineering (SE), beschäftigt sich mit der Herstellung oder Entwicklung von Software, der Organisation und Modellierung der zugehörigen Datenstrukturen und dem Betrieb von Softwaresystemen. Eine Definition von Helmut Balzert beschreibt das Gebiet als
+Leben
+Clara Haskil war die mittlere von drei musikalischen Töchtern sephardischer Juden. Ihr Vater betrieb ein Haushaltswarengeschäft. Den ersten Klavierunterricht erhielt sie mit drei Jahren von ihrer Mutter. Diese war eine gebildete Frau und unterrichtete die Töchter ebenfalls in Fremdsprachen. Nach dem Tod des Vaters 1899 unterrichtete sie auch andere Kinder und richtete sich eine Schneiderwerkstatt ein. Als Sechsjährige kam Clara Haskil auf das Konservatorium Bukarest. Von einem Onkel nach Wien geholt, spielte sie 1902 vor Anton Door. Begeistert empfahl er das Kind Richard Robert, dem Lehrer von Rudolf Serkin und George Szell. Mit 8 Jahren spielte Haskil Mozarts A-Dur-Konzert, KV 488. Nach drei glücklichen Jahren bei Robert wurde sie von ihrem Onkel an das Conservatoire de Paris geschickt, wo er auch mit ihr wohnte.[1] Dort studierte sie Violin- und Klavierspiel bei Joseph Morpain, Alfred Cortot und Lazare Lévy. 1909 gewann sie den 1. Preis für Violine und den 2. Preis für Klavier, 1910 den 1. Preis für Klavier.[2] In der Jury saßen Gabriel Fauré, Moritz Moszkowski, Raoul Pugno und Ricardo Viñes. Im Jahr darauf konzertierte sie in Paris, Bukarest und Mailand. Vor Ferruccio Busoni spielte sie in Zürich dessen berühmte Transkription von Bachs Chaconne, den Schlusssatz der d-Moll-Partita für Violine. Zutiefst beeindruckt, wollte Busoni Haskil als Schülerin gewinnen und nach Berlin mitnehmen. Zeitlebens bedauerte sie die Weigerung ihrer Mutter wegen ihres zu jungen Alters: Sie war erst 16.[3]
 
-„Zielorientierte Bereitstellung und systematische Verwendung von Prinzipien, Methoden und Werkzeugen für die arbeitsteilige, ingenieurmäßige Entwicklung und Anwendung von umfangreichen Softwaresystemen.“
+Seit 1906 entwickelte sich ihre schwere Skoliose, die sie ab 1914 vier Jahre in stationäre Behandlung zwang. Nach der Erholung in der Schweiz nahm sie in Paris ihre Laufbahn wieder auf. Ihre Mutter war 1917 gestorben. Nach Konzerten in Europa debütierte sie 1924 in den USA, in der Aeolian Hall (New York) und in Boston. Mit dem Hallé-Orchester unter Hamilton Harty in Manchester kam sie 1926 zum ersten Mal im Vereinigten Königreich auf die Bühne. In Amerika spielte sie im selben Jahr Schumanns Klavierkonzert mit dem Philadelphia Orchestra unter Leopold Stokowski.
 
-– Lit.: Balzert, S. 36
-Softwaretechnik umfasst eine Vielzahl von Teilgebieten, die in ihrer Gesamtheit die Softwareentwicklung begleiten. Wichtig ist auch die experimentelle Untersuchung von Softwaretechnik, um ihren praktischen Nutzen zu messen und zu verbessern. Zur Beschreibung des „Standes der Technik“ des Fachgebiets gibt es verschiedene Ansätze, unter anderem den Guide to the Software Engineering Body of Knowledge (SWEBOK) der IEEE Computer Society.
+Ab 1927 lebte sie wieder bei ihrem Onkel in Paris. Als er 1934 starb, war Haskil zum ersten Mal auf sich allein gestellt. Oft konzertierte sie mit dem Orchestre National de la Radiodiffusion Française, in dem ihre Schwester Jeanne Haskil Violinistin war. Haskils Vom-Blattspiel und Gedächtnis halfen ihr aus manchen Verlegenheiten. Das 2. Klavierkonzert (Brahms) soll sie sich in zwei Tagen erarbeitet haben. Bei der Musikmäzenin Winnaretta Singer, der Prinzessin Polignac, befreundete sie sich mit Dinu Lipatti.
 
-Die IT-Disziplin Softwaretechnik wird im Sprachgebrauch und als Synonym mit „Softwareentwicklung“ bezeichnet;[1] im sprachlich engeren Sinn steht „Softwareentwicklung“ jedoch für die Tätigkeiten, die innerhalb der Disziplin Softwaretechnik ausgeführt werden.
-
-In erweitertem Sinn versteht man unter Softwaretechnik – neben dem Entwickeln – auch das Betreiben von Software unter Nutzung der Informationstechnik und/oder die technischen Geräte und die Systemsoftware, die dazu oder zur Softwareentwicklung verwendet werden.
-=======
-Wie Google sein Gewissen verlor
-FILE PHOTO: The Google app logo is seen on a smartphone in this illustration
-Detailansicht öffnen
-"Google hat sich verändert", schreibt ein ehemaliger Angestellter in einem bemerkenswerten Blogeintrag. (Foto: REUTERS)
-Staatliche Zensur in China und Militärforschung in den USA: Früher wäre das bei Google undenkbar gewesen, sagt ein ehemaliger Top-Manager - und erhebt schwere Vorwürfe.
-
-Von Simon Hurtz
-
-Facebook
-Twitter
-WhatsApp
-E-Mail
-Flipboard
-Pocket
-Artikel drucken
-Feedback
- 
-Vor zehn Jahren machte Google eine Ansage, die als Kampfansage an die chinesische Regierung verstanden werden konnte. "Wir sind nicht länger bereit, Suchergebnisse in China zu zensieren", schrieb Google-Manager David Drummond im Januar 2010. Die Entscheidung sei Google unglaublich schwergefallen, und man wisse, dass sie weitreichende Folgen haben könne. Mit dieser Prognose sollte Drummond Recht behalten - aber auf eine andere Art, als er sich das damals vorstellte.
-
-Damals stellte Google Menschenrechte über Profit. Heute sei von dieser Haltung nichts mehr übrig, sagt Ross LaJeunesse. In einem Blogeintrag erhebt der ehemalige Google-Manager schwere Vorwürfe. Sie zeichnen das Bild eines Unternehmens, das sich komplett von seinen früheren Werten verabschiedet hat. Er sei für Frauen, die LGBTQ-Gemeinschaft, People of Color und für Menschenrechte eingetreten. "Das hat mich meine Karriere gekostet", schreibt er.
-
-Datenschutz "Daten von Schwangeren zählen zu den wertvollsten überhaupt"
-Datenschutz
-"Daten von Schwangeren zählen zu den wertvollsten überhaupt"
-Die Aktivistin Eva Blum-Dumontet hat aufgedeckt, dass Zyklus-Apps sensible Daten mit Facebook teilen. Auf dem heute beginnenden Kongress des Chaos Computer Clubs stellt sie ihre Analyse vor.  
-Von Max Hoppenstedt
-LaJeunesse ist mehr als ein frustrierter Angestellter, der seinem Ex-Arbeitgeber schaden will, nachdem er im Streit gegangen ist. Der 50-Jährige arbeitete elf Jahre für Google und war mit dafür verantwortlich, den Rückzug aus China umzusetzen - eine mutige Entscheidung, die ihn stolz gemacht habe. Ende 2012 wurde er zum Leiter der internationalen Beziehungen ernannt und setzte sich später für ein Menschrechtsprogramm ein. Das Vorhaben hätte alle Google-Abteilungen verpflichtet, ihre Entscheidungen an der Allgemeinen Erklärung der Menschenrechte der Vereinten Nationen auszurichten.
-
-"Aber jedes Mal, wenn ich ein Menschrechtsprogramm vorschlug, brachten hochrangige Manager andere Gründe vor, um nein zu sagen", schreibt LaJeunesse. 2017 habe er erfahren, dass Google erneut eine zensierte Suchmaschine für den chinesischen Markt anbieten wolle. Ein Jahr später wurde der Plan als "Project Dragonfly" öffentlich bekannt.
-
-
- 
-Er habe bei dieser Entscheidung nicht mitreden dürfen, sagt LaJeunesse. "Dann habe ich verstanden, dass der Konzern niemals vorhatte, Menschenrechtsprinzipien in seine Produkte und unternehmerischen Entscheidungen einfließen zu lassen." Ausgerechnet in jenem Moment, als es ein eindeutiges Bekenntnis für Menschenrechte gebraucht hätte, habe Google Profit und Aktienkurs den Vorzug gegeben.
-
-Bereits kurz nachdem Google sich aus China zurückgezogen hatte, hätten einige Manager einen Kurswechsel gefordert. "Innerhalb eines Jahres nach der Entscheidung drängten Leiter von Google Maps und Android darauf, ihre Produkte in China anzubieten", schreibt LaJeuness. Manager von Googles Cloud-Sparte hätten Verträge mit Saudi-Arabien abschließen wollen - einem Regime, das Menschenrechte ebenso wenig achtet wie China. Er habe jahrelang heftig dagegen argumentiert, bis ihm schließlich klargeworden sei, dass er trotz seiner Führungsposition keinen Einfluss auf wichtige Entscheidungen mehr habe.
-
-Google und LaJeunesse erzählen unterschiedliche Versionen des Abgangs
-"Wir haben uns eindeutig verpflichtet, Menschenrechtsorganisationen und [entsprechende] Bemühungen zu unterstützen", sagt eine Google-Sprecherin. LaJeunesse sei freiwillig gegangen, nachdem ihm eine neue Position mit vergleichbaren Führungsverantwortlichkeiten und demselben Gehalt angeboten worden sei.
-
-LaJeunesse stellt den Vorgang anders dar. Trotz ausgezeichneter Bewertungen und mehr als 90 offener Stellen im Policy-Team habe Google ihm gesagt, dass es im Zuge einer Umstrukturierung keinen Job mehr für ihn gebe. Als er sich einen Anwalt genommen habe, sei plötzlich von einem Missverständnis die Rede gewesen. Im Tausch gegen sein Schweigen habe man ihm eine "kleine Rolle" angeboten. Darauf sei er aber nicht eingegangen, er habe keine Verschwiegenheitserklärung unterzeichnet.
-
-Das erlaubt es LaJeunesse nun, nicht nur Google strategische Entscheidungen anzuprangern, sondern auch die Unternehmenskultur. Kollegen in leitenden Positionen hätten junge Frauen belästigt und angeschrien, bis diese geweint hätten. Bei einem großen Meeting habe sein Chef gesagt: "Jetzt kommt ihr Asiaten auch mal ans Mikrofon. Ich weiß, dass ihr es nicht mögt, Fragen zu stellen."
-
-Sein Team sei mehrfach zu rassistischen und homophoben Rollenspielen verpflichtet worden. LaJeunesse, der mit seinem Mann Patrick zusammenlebt, sei dabei in eine Gruppe mit "Homos" gesteckt worden, während Teilnehmer Vorurteile wie "tuntig" oder "promiskuitiv" riefen. Andere Kollegen seien gezwungen worden, sich Gruppen anzuschließen, die sie nach ihrer Hautfarbe einsortierten, etwa "Asiaten" oder "Brown People".
-
-Der HR-Chef hat einen Kollegen aufgefordert, Nachforschungen über ihn anzustellen
-Obwohl LaJeunesse mehrfach zu Personalabteilung gegangen sei, habe es keine Konsequenzen gegeben - nur für ihn selbst: In einer E-Mail, die versehentlich an ihn verschickt worden sei, habe der HR-Chef einen Kollegen aufgefordert, Nachforschungen über LaJeunesse anzustellen. Demnach habe er sich zu oft überangebliche Missstände beschwert.
-
-"Ich habe mich nicht verändert", sagte LaJeunesse der Washington Post. "Google hat sich verändert." Während seiner elf Jahre bei Google wuchs das Unternehmenvon 10 000 auf mehr als 100 000 Mitarbeiter. "Jedes Jahr kamen Tausende hinzu und überstimmten jene, die sich dafür einsetzen, die ursprünglichen Werte und Kultur des Unternehmens zu bewahren", schreibt LaJeunesse.
-
-Im Laufe des vergangenen Jahrzehnts zogen sich die Gründer Larry Page und Sergey Brin immer weiter aus dem Tagesgeschäft zurück. "Google ist kein gewöhnliches Unternehmen", schrieben sie 2004. "Wir wollen keinen Dienst anbieten, der politisch zensiert wird", sagte Brin 2010 auf einer Ted-Konferenz. Acht Jahre später klang der heutige Google-Chef Sundar Pichai ganz anders. China sei ein "wunderbarer, innovativer Markt", sagte er. China sei so wichtig undhabe so viele potenzielle Nutzer, dass Google sich "verpflichtet fühle, intensiv über das Problem nachzudenken und eine langfristigere Perspektive einzunehmen.
-
-"Nach heftigen internen Protesten und einem Brief, den mehr als 1400 Angestellteunterschrieben, erklärte Google "Project Dragonfly" im vergangenen August für beendet. Auch "Project Maven", ein Vertrag mit dem Pentagon, wurde wohl nur deshalb nicht verlängert, weil Tausende Mitarbeiter eine Petition dagegen unterschrieben. Derzeit erwägen mehrere ehemalige Google-Angestellte arbeitsrechtliche Klagen gegen den Konzern. Sie wurden angeblich gefeuert, weil sie Widerstand gegen Dragonfly und Maven organisierten.
-
-Google ist nicht das einzige Tech-Unternehmen, dessen Angestellte rebellieren. Auch bei Microsoft und Amazon gibt es immer wieder Proteste gegen umstrittene Militär- und Überwachungsprojekte. Der interne Widerstand ist LaJeunesse aber nicht genug. Er fordert politische Konsequenzen und schärfere Regulierung: "Der Einfluss dieser Unternehmen auf unser Leben ist schlicht zu groß, um sie Managern zu überlassen, die sich nur ihren Aktionären verpflichtet fühlen."
-
-Lesen Sie mit SZ Plus auch
->>>>>>> bc0f231b4e1e239c4ce5116cf02b11f5a0cd19d1
+Obwohl häufige Krankheiten, extremes Lampenfieber und der Aufstieg des Nationalsozialismus das Leben erschwerten, konzertierte sie in den 1930er Jahren in der Schweiz, in Belgien und in den USA. Mit ihrer Schwester Jeanne und einigen Mitgliedern des Nationalorchesters floh sie 1941 vor den Deutschen nach Marseille. Wie Norbert Glanzberg und andere Juden fand sie Zuflucht bei der Gräfin Pastré. Im Mai 1942 musste ihr ein Tumor an der Hypophyse entfernt werden, der auf den Sehnerv drückte. Kurz vor der Besetzung Marseilles durch die Wehrmacht konnte sie sich am 6. November 1942 in die Schweiz absetzen. Ihre Schwester Jeanne fand 1943 ein Versteck auf dem Land und konnte 1944 vor den Deutschen flüchten.

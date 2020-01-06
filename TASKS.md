@@ -5,8 +5,7 @@
 | Task | Where |
 |----- | ------|
 | Link to my page is not working<sup>[1](#footnote1)</sup> | Welcome window |
-| Sticky the second entry text in whole remaining window | Second window |
-| Include "working with previous upload file" option | Second window |
+| Include "working with last upload text" option | Second window |
 | Get the meaning of all text words after the user upload text | Second window |
 | Include a warning that the previous task takes some minutes | Second window |
 | Fix scroll roll | Third window
