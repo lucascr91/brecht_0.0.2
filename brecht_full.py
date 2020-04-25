@@ -130,7 +130,9 @@ class Brecht_Master(tk.Tk):
         super().__init__(*args, **kwargs)
         # self.geometry('600x400')
         self.title('Brecht 0.0.2')
-        self.resizable(False, False)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(0, weight=1)
+        self.resizable(True, True)
 #Style
         style = ThemedStyle(self)
         style.set_theme("arc")
@@ -264,13 +266,15 @@ class Quit_Frame_w4(ttk.Frame):
 
 root = Brecht_Master()
 
-# style1 = ttk.Style(window3)
-# style1.theme_use('classic')
-
-
-
 user_text = tk.StringVar()
-font.nametofont('TkDefaultFont').configure(size = 15)
+
+#set default font
+default_font = tk.font.nametofont("TkDefaultFont")
+default_font.configure(size=15)
+root.option_add("*Font", default_font)
+
+#create myfont
+my_font=Font(family="Helvetica", size=12)
 
 #*********************WINDOW 4******************************
 window4 = Canonical(root)
@@ -292,9 +296,8 @@ text_widget4.insert('1.0', '''Hi, here a couple of instructions to play this gam
 On each session, Brecht will show you 5 words. When you see one word that you already know, hit "SKIP" button and this word will not be show again.
 If you don't know the presented word, hit "SHOW ME" button and Brecht will show you the word meaning and translation to English. 
 When you finish with the 5 words, just hit "START NEW SESSION" to play the game again with new words.''', 'font14')
-text_widget4.tag_configure('font20', font=('Times',20))
-text_widget4.tag_configure('font14', font=('Times',14))
 text_widget4.tag_configure("red_text", foreground ='red')
+text_widget4.config(font=my_font)
 text_widget4.tag_configure("center_text", justify ='center')
 text_widget4.pack()
 
@@ -314,7 +317,7 @@ text_w3.pack(side = 'left')
 
 #WIDGET TEXT
 text_widget3 = tk.Text(text_w3)
-text_widget3.config(font=('Times',16))
+text_widget3.config(font=my_font)
 text_widget3.pack()
 
 
@@ -330,9 +333,9 @@ window2.grid(row=0, column=0, sticky="NSEW")
 
 text_w2 = Canonical(window2)
 paste_label = ttk.Label(text_w2, text='Paste your text here: ')
-paste_label.pack(side = 'top', pady = 20)
+paste_label.pack(side = 'top', pady = 40)
 text_widget2 = tk.Text(text_w2)
-text_widget2.config(font=('Times',16))
+text_widget2.config(font=my_font)
 text_widget2.pack(side = 'top')
 text_w2.pack(side ='top')
 

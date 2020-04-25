@@ -5,5 +5,5 @@ python -m spacy download fr_core_news_sm
 python -m spacy download de
 python -m spacy download en
 python -m spacy download fr
-pip install ttk_themes
+pip install ttkthemes
 pip install selenium
