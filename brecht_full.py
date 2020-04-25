@@ -333,7 +333,7 @@ window2.grid(row=0, column=0, sticky="NSEW")
 
 text_w2 = Canonical(window2)
 paste_label = ttk.Label(text_w2, text='Paste your text here: ')
-paste_label.pack(side = 'top', pady = 40)
+paste_label.pack(side = 'top', pady = 20)
 text_widget2 = tk.Text(text_w2)
 text_widget2.config(font=my_font)
 text_widget2.pack(side = 'top')
